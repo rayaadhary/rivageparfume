@@ -1,14 +1,19 @@
 ---
 import '../styles/global.css';
 
+// Satu tempat untuk domain: ganti `site` di astro.config.mjs saat pindah ke rivageparfume.com
+const site = Astro.site ?? new URL('https://rivageparfume.vercel.app');
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL('/images/hero.webp', site).href;
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://rivageparfume.com',
+  '@id': canonical,
   name: 'Rivage Parfume',
   description:
     'Toko parfum refill di Indramayu. Isi ulang parfum mulai Rp10.000 per 10 ml, bisa bawa botol sendiri atau beli botol kosong.',
-  image: 'https://rivageparfume.com/images/hero.webp',
+  image: ogImage,
   telephone: '+6282121535806',
   address: {
     '@type': 'PostalAddress',
@@ -24,7 +29,7 @@ const schema = {
     longitude: 108.3274155,
   },
   hasMap: 'https://maps.app.goo.gl/6PZvtGZ9L3rLkwYz8',
-  url: 'https://rivageparfume.com',
+  url: canonical,
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -39,7 +44,6 @@ const schema = {
   },
 };
 
-const ogImage = 'https://rivageparfume.com/images/hero.webp';
 ---
 
 <!DOCTYPE html>
@@ -54,6 +58,7 @@ const ogImage = 'https://rivageparfume.com/images/hero.webp';
     />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#F5F0E7" />
+    <link rel="canonical" href={canonical} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -63,7 +68,7 @@ const ogImage = 'https://rivageparfume.com/images/hero.webp';
       property="og:description"
       content="Toko parfum refill di Indramayu. Isi ulang mulai Rp10.000, bawa botol sendiri. Konsultasi dan pesan cepat via WhatsApp."
     />
-    <meta property="og:url" content="https://rivageparfume.com" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
 
     <!-- Twitter Card -->

@@ -27,4 +27,6 @@ Alamat, jam buka, dan koordinat mengikuti listing Google Maps. Kalau listing diu
 
 ## Deploy
 
-Build command `npm run build`, publish directory `dist`, Node 24. Domain dan `canonical`/`robots.txt`/`sitemap.xml` belum ditetapkan.
+Build command `npm run build`, publish directory `dist`, Node 24.
+
+Domain aktif sementara: `https://rivageparfume.vercel.app`. Saat pindah ke `rivageparfume.com`, cukup ubah `site` di `astro.config.mjs`; canonical, OG, dan JSON-LD ikut menyesuaikan.

@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://rivageparfume.com',
+  site: 'https://rivageparfume.vercel.app',
   build: {
     inlineStylesheets: 'always',
   },
