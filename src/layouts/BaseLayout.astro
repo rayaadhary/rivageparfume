@@ -1,0 +1,100 @@
+---
+import '../styles/global.css';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://rivageparfume.com',
+  name: 'Rivage Parfume',
+  description:
+    'Toko parfum refill di Indramayu. Isi ulang parfum mulai Rp10.000 per 10 ml, bisa bawa botol sendiri atau beli botol kosong.',
+  image: 'https://rivageparfume.com/images/hero.webp',
+  telephone: '+6282121535806',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Jl. Cimanuk Hilir RT 15 RW 06, Pagirikan',
+    addressLocality: 'Indramayu',
+    addressRegion: 'Jawa Barat',
+    postalCode: '45227',
+    addressCountry: 'ID',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -6.3093321,
+    longitude: 108.3274155,
+  },
+  hasMap: 'https://maps.app.goo.gl/6PZvtGZ9L3rLkwYz8',
+  url: 'https://rivageparfume.com',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59',
+    },
+  ],
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Indramayu',
+  },
+};
+
+const ogImage = 'https://rivageparfume.com/images/hero.webp';
+---
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rivage Parfume Indramayu | Parfum Refill Mulai Rp10 Ribu</title>
+    <meta
+      name="description"
+      content="Toko parfum refill di Indramayu. Isi ulang mulai Rp10.000, bisa bawa botol sendiri. Chat WhatsApp untuk pilih aroma segar, manis, atau woody."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#F5F0E7" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="Rivage Parfume Indramayu | Parfum Refill Mulai Rp10 Ribu" />
+    <meta
+      property="og:description"
+      content="Toko parfum refill di Indramayu. Isi ulang mulai Rp10.000, bawa botol sendiri. Konsultasi dan pesan cepat via WhatsApp."
+    />
+    <meta property="og:url" content="https://rivageparfume.com" />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rivage Parfume Indramayu | Parfum Refill Mulai Rp10 Ribu" />
+    <meta
+      name="twitter:description"
+      content="Parfum refill di Indramayu mulai Rp10.000. Bawa botol sendiri atau beli botol baru. Chat WA sekarang."
+    />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%231D1713%22/><text x=%2250%22 y=%2268%22 font-family=%22Georgia,serif%22 font-size=%2258%22 fill=%22%23EDE4D6%22 text-anchor=%22middle%22>R</text></svg>"
+    />
+
+    <!-- Typography: self-hosted latin subset, preloaded so LCP text is not blocked -->
+    <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/hero-1080.webp"
+      imagesrcset="/images/hero-640.webp 640w, /images/hero-1080.webp 1080w"
+      imagesizes="(min-width: 900px) 46vw, 100vw"
+      fetchpriority="high"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

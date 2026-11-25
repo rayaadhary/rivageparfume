@@ -1,0 +1,348 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
+
+const wa = (text: string, medium: string) =>
+  `https://wa.me/6282121535806?text=${encodeURIComponent(text)}&utm_source=website&utm_medium=${medium}`;
+
+const chatUmum = 'Halo Rivage Parfume, aku mau tanya parfum refill.';
+const mapsUrl = 'https://maps.app.goo.gl/6PZvtGZ9L3rLkwYz8';
+---
+
+<BaseLayout>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="wordmark"
+        >rivage <small><span class="only-wide">parfum refill · </span>Indramayu</small></a
+      >
+      <nav class="header-nav" aria-label="Navigasi utama">
+        <a href="#harga">Harga</a>
+        <a href="#aroma">Aroma</a>
+        <a href="#lokasi">Lokasi</a>
+      </nav>
+      <a class="header-wa" href={wa(chatUmum, 'header')} data-cta="header-wa" target="_blank" rel="noopener noreferrer">
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Parfum refill · Indramayu</p>
+          <h1>Parfum refill berkelas, <span class="nowrap">harga bersahabat.</span></h1>
+          <p class="hero-lede">
+            Isi ulang parfum mulai Rp10.000 per 10 ml. Bisa coba tester di toko dan bawa botol favoritmu sendiri.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href={wa(chatUmum, 'hero_cta')} data-cta="hero-wa" target="_blank" rel="noopener noreferrer">
+              <WhatsAppIcon />Chat WhatsApp
+            </a>
+            <a class="text-link" href="#harga">Lihat harga</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img
+            src="/images/hero-1080.webp"
+            srcset="/images/hero-640.webp 640w, /images/hero-1080.webp 1080w"
+            sizes="(min-width: 900px) 46vw, 100vw"
+            alt="Botol parfum Rivage Parfume dengan aroma amber, ditemani kayu dan batu alam"
+            width="1250"
+            height="765"
+            fetchpriority="high"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="facts-section" aria-label="Informasi singkat">
+      <div class="container">
+        <ul class="facts">
+          <li>
+            <span class="fact-label">Isi ulang</span>
+            <span class="fact-value">Rp10.000 <span>/ 10 ml</span></span>
+          </li>
+          <li>
+            <span class="fact-label">Buka</span>
+            <span class="fact-value">24 jam <span>setiap hari</span></span>
+          </li>
+          <li>
+            <span class="fact-label">Lokasi</span>
+            <span class="fact-value">Pasekan <span>Indramayu</span></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="cara" class="section">
+      <div class="container split">
+        <div class="split-intro">
+          <p class="eyebrow">Cara refill</p>
+          <h2 class="section-title">Tiga langkah, selesai di tempat.</h2>
+          <p class="section-note">Tidak perlu janji temu. Datang, coba aromanya, lalu isi ulang.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-num">01</span>
+            <div class="step-body">
+              <h3>Pilih aroma</h3>
+              <p>Cium tester yang tersedia, atau ceritakan selera wangi yang kamu suka ke kami.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <div class="step-body">
+              <h3>Siapkan botol</h3>
+              <p>Bawa botol spray sendiri dari rumah, atau beli botol kosong Rp5.000 di toko.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <div class="step-body">
+              <h3>Isi ulang</h3>
+              <p>Parfum diisi sesuai ukuran botol. Bayar, lalu langsung bisa dipakai.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="harga" class="section">
+      <div class="container split">
+        <div class="split-intro">
+          <p class="eyebrow">Harga</p>
+          <h2 class="section-title">Transparan, tanpa biaya tersembunyi.</h2>
+        </div>
+        <div>
+          <dl class="price-list">
+            <div class="price-row">
+              <dt>Refill parfum 10 ml<span>Rp1.000 per ml</span></dt>
+              <dd>Rp10.000</dd>
+            </div>
+            <div class="price-row">
+              <dt>Botol kosong<span>Botol baru, siap isi</span></dt>
+              <dd>Rp5.000</dd>
+            </div>
+          </dl>
+          <p class="price-foot">Bawa botol sendiri? Kamu hanya bayar isi ulangnya.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="aroma" class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Koleksi aroma</p>
+          <h2 class="section-title">Pilih karakter wangimu.</h2>
+          <p class="section-note">Sembilan aroma dalam tiga karakter. Semua tersedia untuk dicoba di toko.</p>
+        </header>
+
+        <div class="scents">
+          <article class="scent">
+            <p class="scent-index">01</p>
+            <h3>Segar</h3>
+            <ul>
+              <li>Blue Citrus</li>
+              <li>Aqua Marine</li>
+              <li>Lemon Bamboo</li>
+            </ul>
+            <a
+              class="scent-wa"
+              href={wa('Halo Rivage, aku tertarik aroma kelompok Segar, boleh dibantu rekomendasi?', 'scent_segar')}
+              data-cta="aroma-segar"
+              target="_blank"
+              rel="noopener noreferrer">Tanya aroma segar</a
+            >
+          </article>
+
+          <article class="scent">
+            <p class="scent-index">02</p>
+            <h3>Manis &amp; hangat</h3>
+            <ul>
+              <li>Vanilla Lace</li>
+              <li>Berry Violet</li>
+              <li>Plum Honey</li>
+              <li>Chestnut Smoke</li>
+            </ul>
+            <a
+              class="scent-wa"
+              href={wa('Halo Rivage, aku tertarik aroma kelompok Manis dan Hangat, boleh dibantu rekomendasi?', 'scent_manis')}
+              data-cta="aroma-manis"
+              target="_blank"
+              rel="noopener noreferrer">Tanya aroma manis</a
+            >
+          </article>
+
+          <article class="scent">
+            <p class="scent-index">03</p>
+            <h3>Mewah &amp; woody</h3>
+            <ul>
+              <li>Amber Saffron</li>
+              <li>Pineapple Birch</li>
+            </ul>
+            <a
+              class="scent-wa"
+              href={wa('Halo Rivage, aku tertarik aroma kelompok Mewah dan Woody, boleh dibantu rekomendasi?', 'scent_woody')}
+              data-cta="aroma-woody"
+              target="_blank"
+              rel="noopener noreferrer">Tanya aroma woody</a
+            >
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kenapa" class="section">
+      <div class="container split">
+        <div class="split-intro">
+          <p class="eyebrow">Kenapa Rivage</p>
+          <h2 class="section-title">Coba dulu, baru bawa pulang.</h2>
+          <p class="section-note">Kami tidak menjual wangi yang belum kamu cium.</p>
+        </div>
+        <ul class="points">
+          <li>
+            <h3>Bisa coba tester</h3>
+            <p>Semua aroma tersedia untuk dicoba langsung di kulit sebelum kamu memutuskan.</p>
+          </li>
+          <li>
+            <h3>Harga jelas per ml</h3>
+            <p>Rp1.000 per ml. Kamu tahu persis yang kamu bayar, tanpa biaya tambahan.</p>
+          </li>
+          <li>
+            <h3>Bawa botol sendiri</h3>
+            <p>Botol spray lama yang masih bersih bisa diisi ulang di tempat.</p>
+          </li>
+          <li>
+            <h3>Dibantu pilih</h3>
+            <p>Bingung menentukan aroma? Sebutkan acaranya, kami bantu pilihkan.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="lokasi" class="location">
+      <div class="container">
+        <p class="eyebrow">Kunjungi</p>
+        <h2 class="section-title">Lokasi &amp; jam buka</h2>
+        <dl class="loc-list">
+          <div class="loc-row">
+            <dt>Alamat</dt>
+            <dd>Jl. Cimanuk Hilir RT 15 RW 06, Pagirikan, Kec. Pasekan, Indramayu, <span class="nowrap">Jawa Barat 45227</span></dd>
+          </div>
+          <div class="loc-row">
+            <dt>Jam buka</dt>
+            <dd>Buka 24 jam, setiap hari</dd>
+          </div>
+          <div class="loc-row">
+            <dt>WhatsApp</dt>
+            <dd>+62 821-2153-5806</dd>
+          </div>
+        </dl>
+        <div class="loc-actions">
+          <a
+            class="btn"
+            href={wa(chatUmum, 'location_cta')}
+            data-cta="location-wa"
+            target="_blank"
+            rel="noopener noreferrer"><WhatsAppIcon />Chat WhatsApp</a
+          >
+          <a class="text-link" href={mapsUrl} target="_blank" rel="noopener noreferrer">Buka di Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container split">
+        <div class="split-intro">
+          <p class="eyebrow">Pertanyaan</p>
+          <h2 class="section-title">Yang sering ditanyakan.</h2>
+          <p class="section-note">Belum terjawab? Chat kami langsung lewat WhatsApp.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Apa itu parfum refill?</summary>
+            <div class="faq-answer">
+              Layanan isi ulang bibit wewangian ke dalam botol spray. Kamu hanya membayar isinya, tanpa kemasan luar
+              yang membuat harganya naik.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Bisa coba aromanya dulu?</summary>
+            <div class="faq-answer">
+              Bisa. Tersedia tester untuk semua koleksi aroma. Kamu bebas mencium dan mencoba langsung di kulit.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Bisa bawa botol sendiri?</summary>
+            <div class="faq-answer">
+              Bisa, asalkan botol spray-nya masih bersih. Kamu hanya perlu membayar biaya refill mulai Rp10.000 per 10
+              ml.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Bagaimana cara pesan?</summary>
+            <div class="faq-answer">
+              Klik tombol WhatsApp di halaman ini. Pesan akan terisi otomatis, lalu sebutkan aroma yang kamu inginkan
+              atau konsultasikan dulu dengan kami.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="container">
+        <p class="eyebrow">Mulai hari ini</p>
+        <h2>Temukan wangi khas dirimu.</h2>
+        <p>Mulai Rp10.000. Tanya aroma dulu lewat WhatsApp, tanpa harus keluar rumah.</p>
+        <a class="btn" href={wa(chatUmum, 'bottom_cta')} data-cta="closing-wa" target="_blank" rel="noopener noreferrer"
+          ><WhatsAppIcon />Chat WhatsApp</a
+        >
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>Rivage Parfume</strong>
+          <p>Jl. Cimanuk Hilir RT 15 RW 06, Pagirikan,<br />Kec. Pasekan, Indramayu 45227</p>
+        </div>
+        <div>
+          <strong>Jam buka</strong>
+          <p>Setiap hari</p>
+          <p>Buka 24 jam</p>
+        </div>
+        <div>
+          <strong>Kontak</strong>
+          <div class="footer-links">
+            <a href={wa(chatUmum, 'footer')} data-cta="footer-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href={mapsUrl} target="_blank" rel="noopener noreferrer">Google Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-mark">
+        rivage<small>parfum refill · Indramayu</small>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Rivage Parfume</p>
+        <p>Indramayu, Jawa Barat</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-bar" role="region" aria-label="Pesan cepat">
+    <div class="sticky-inner">
+      <p class="sticky-price">Isi ulang mulai<b>Rp10.000</b></p>
+      <a
+        class="btn sticky-btn"
+        href={wa(chatUmum, 'sticky_bar')}
+        data-cta="sticky-wa"
+        target="_blank"
+        rel="noopener noreferrer"><WhatsAppIcon />Chat WhatsApp</a
+      >
+    </div>
+  </div>
+</BaseLayout>
